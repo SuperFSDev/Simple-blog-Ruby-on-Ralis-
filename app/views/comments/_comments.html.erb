@@ -1,0 +1,11 @@
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+    <div class="card d-flex flex-row">
+    <p class=''><strong><%= comment.username %></strong>: <%= comment.body %>
+    <%= button_to 'X', [comment.post, comment],
+        method: :delete,
+        data: {confirm: 'Are you sure?'},
+        :class => 'btn btn-danger ml-2'
+    %>
+    </div>
+<% end %>
